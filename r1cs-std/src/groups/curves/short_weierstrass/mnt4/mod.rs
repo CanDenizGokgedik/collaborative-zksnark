@@ -300,7 +300,7 @@ impl<P: MNT4Parameters> G2PreparedVar<P> {
                     continue;
                 }
                 v.push(tmp & 1 == 1);
-                tmp >>= 1;
+                #[allow(unused_assignments)] { tmp >>= 1; }
             }
 
             for bit in v.iter().rev() {
@@ -316,7 +316,7 @@ impl<P: MNT4Parameters> G2PreparedVar<P> {
                     r = r2;
                 }
 
-                tmp >>= 1;
+                #[allow(unused_assignments)] { tmp >>= 1; }
             }
         }
 
